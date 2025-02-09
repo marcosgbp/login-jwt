@@ -3,6 +3,7 @@ import { PORT } from "./config.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import router from "./routes/pages.js";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -14,10 +15,8 @@ app.set("view engine", "hbs");
 
 console.log(__dirname);
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
-
+//Rutas
+app.use("/", router);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
