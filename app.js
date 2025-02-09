@@ -3,6 +3,8 @@ import { PORT } from "./config.js";
 
 const app = express();
 
+
+
 app.get("/", (req, res) => {
     res.send("<h1>Home Page</h1>");
 });
